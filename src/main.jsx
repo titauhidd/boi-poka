@@ -8,6 +8,7 @@ import Errorpage from "./Components/Errorelement/Errorpage.jsx";
 import Home from "./Components/Homee/Home.jsx";
 import Listedbooks from "./Components/ListedBooks/Listedbooks.jsx";
 import Pagesread from "./Components/PagesRead/Pagesread.jsx";
+import Bookdetail from "./Components/Bookdetail/Bookdetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "book/:bookId",
+        element: <Bookdetail></Bookdetail>,
+        loader: () => fetch("booksdata.json"),
       },
       {
         path: "/listedbooks",
